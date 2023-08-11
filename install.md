@@ -54,7 +54,7 @@ cd my-nix
 nano /mnt/etc/nixos/hardware-configuration.nix
 nano system/boot/filesystem.nix
 rm /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/configuration.nix
-nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store" --show-trace --flake .#hobr-os
+nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store" --show-trace --flake .#hobr-nixos
 reboot
 
 make sys
