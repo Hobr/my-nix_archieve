@@ -1,0 +1,65 @@
+# 安装
+
+```bash
+sudo -i
+# 我个人有两个硬盘, 一个硬盘上安装了 Windows, 我选择共用 Windows的 EFI分区, 另一个盘就分一个区给 LVM, swap和persit文件交给 lvm btrfs
+parted /dev/nvme0n1 mklabel gpt
+parted /dev/nvme0n1 mkpart Nix 0% 100%
+parted /dev/nvme0n1 print
+
+# 加密
+cryptsetup --verify-passphrase -v luksFormat /dev/nvme0n1p1
+cryptsetup open /dev/nvme0n1p1 crypt
+
+# lvm
+pvcreate /dev/mapper/crypt
+vgcreate lvm /dev/mapper/crypt
+
+lvcreate -L 24G -n swap lvm
+lvcreate -l 100%FREE -n root lvm
+
+# 交换
+mkswap -L Swap /dev/lvm/swap
+swapon /dev/lvm/swap
+
+# 子卷
+mkfs.btrfs -L NixOS /dev/lvm/root
+mount -t btrfs /dev/lvm/root /mnt
+
+btrfs subvolume create /mnt/nix
+btrfs subvolume create /mnt/persist
+btrfs subvolume list -p /mnt
+umount /mnt
+
+# 挂载, windows/data是我的数据盘, 你可以不用挂载
+mount -t tmpfs -o defaults,mode=755,size=4G none /mnt
+
+mkdir -p /mnt/{persist/sys,persist/home,persist/dot,home,home/hobr,nix,boot,mnt/windows,mnt/data}
+
+mount -t tmpfs -o defaults,mode=777,size=4G none /mnt/home/hobr
+
+mount -o compress=zstd,ssd,noatime,nodiratime,subvol=nix /dev/lvm/root /mnt/nix
+mount -o compress=zstd,ssd,noatime,nodiratime,subvol=persist /dev/lvm/root /mnt/persist
+
+mount /dev/nvme1n1p1 /mnt/boot
+mount /dev/nvme1n1p3 /mnt/mnt/windows
+mount /dev/nvme1n1p4 /mnt/mnt/data
+lsblk -f
+
+# 部署
+nixos-generate-config --root /mnt
+git clone https://github.com/Hobr/my-nix.git
+cd my-nix
+## 修改成你的uuid
+nano /mnt/etc/nixos/hardware-configuration.nix
+nano system/boot/filesystem.nix
+rm /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/configuration.nix
+nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store" --show-trace --flake .#hobr-os
+reboot
+
+make sys
+make home
+make update
+make history
+make gc
+```
