@@ -13,13 +13,13 @@
     enable = true;
   };
 
-  programs.gnupg.agent = {
+  services.gpg-agent.enable = {
     enable = true;
-    enableSSHSupport = true;
+    enableSshSupport = true;
   };
 
   programs.git.enable = true;
 
   services.v2raya.enable = true;
-  services.openssh.enable = true;
+  services.ssh-agent.enable = true;
 }
