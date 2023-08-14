@@ -11,7 +11,6 @@
 
   programs.firefox = {
     enable = true;
-    languagePacks = ["zh-CN"];
   };
 
   programs.gnupg.agent = {

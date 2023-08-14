@@ -58,10 +58,10 @@ nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-chann
 reboot
 
 make sys
-### nixos-rebuild boot --flake .#hobr-nixos
+### sudo nixos-rebuild switch --flake .#hobr-nixos
 
 make home
-### home-manager boot --flake .#hobr@hobr-nixos
+### sudo home-manager switch --flake .#hobr@hobr-nixos
 
 make update
 ### nix flake update
