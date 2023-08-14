@@ -61,7 +61,7 @@ make sys
 ### sudo nixos-rebuild switch --flake .#hobr-nixos
 
 make home
-### sudo home-manager switch --flake .#hobr@hobr-nixos
+### home-manager switch --flake .#hobr@hobr-nixos
 
 make update
 ### nix flake update
