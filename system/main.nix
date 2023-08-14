@@ -18,6 +18,7 @@
     ./boot.nix
     ./hardware-configuration.nix
     ./hardware.nix
+    ./i18n.nix
     ./network.nix
     ./nvidia.nix
     ./pkg.nix
