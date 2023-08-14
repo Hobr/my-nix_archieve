@@ -1,13 +1,17 @@
 {pkgs, ...}: {
   programs.vscode = {
     enable = true;
-    enableUpdateCheck = false;
     package = pkgs.unstable.vscode;
+
+    enableUpdateCheck = false;
+    enableExtensionUpdateCheck = false;
+
+    #extensions = with pkgs.unstable.vscode-extensions; [
+    #];
 
     userSettings = {
       "explorer.confirmDelete" = false;
       "workbench.startupEditor" = "newUntitledFile";
-      "npm.packageManager" = "yarn";
       "files.autoSave" = "onFocusChange";
       "editor.renderWhitespace" = "all";
       "editor.minimap.showSlider" = "always";
@@ -17,7 +21,6 @@
       "editor.renderControlCharacters" = true;
       "diffEditor.ignoreTrimWhitespace" = false;
       "editor.wordWrap" = "on";
-      "editor.fontFamily" = "CaskaydiaCove Nerd Font Mono";
       "explorer.confirmDragAndDrop" = false;
       "git.enableSmartCommit" = true;
       "terminal.integrated.cursorStyle" = "line";
@@ -30,35 +33,35 @@
       "diffEditor.maxComputationTime" = 0;
       "ruby.format" = "rubocop";
       "eslint.format.enable" = true;
-      "eslint.validate" = [
-        "javascript"
-        "javascriptreact"
-        "vue"
-        "typescript"
-        "typescriptreact"
-      ];
       "python.languageServer" = "Pylance";
-      "editor.fontSize" = 16;
       "editor.cursorSmoothCaretAnimation" = "on";
-      "workbench.colorTheme" = "Catppuccin Latte";
       "window.titleBarStyle" = "custom";
-      "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font Mono";
       "redhat.telemetry.enabled" = true;
       "editor.inlineSuggest.enabled" = true;
       "security.workspace.trust.untrustedFiles" = "open";
-      "terminal.integrated.fontSize" = 12.5;
       "editor.unicodeHighlight.nonBasicASCII" = false;
       "editor.minimap.autohide" = true;
       "stylua.styluaPath" = "/usr/sbin/stylua";
       "editor.inlineSuggest.showToolbar" = "always";
       "window.menuBarVisibility" = "compact";
+      "editor.formatOnType" = false;
+
+      # 字体
+      "editor.fontFamily" = "CaskaydiaCove Nerd Font Mono";
+      "editor.fontSize" = 16;
+
+      "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font Mono";
+      "terminal.integrated.fontSize" = 12.5;
+
+      # 主题
+      "workbench.colorTheme" = "Catppuccin Latte";
       "workbench.iconTheme" = "catppuccin-latte";
       "workbench.productIconTheme" = "fluent-icons";
 
+      # Formatter
       "[css]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
-      "editor.formatOnType" = false;
       "[cpp]" = {
         "editor.defaultFormatter" = "ms-vscode.cpptools";
       };
