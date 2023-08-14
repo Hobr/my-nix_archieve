@@ -5,7 +5,6 @@
       libva
       libva-utils
       glxinfo
-      unstable.vscode
       gcc
       gnomeExtensions.kimpanel
     ];

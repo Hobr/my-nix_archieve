@@ -9,6 +9,12 @@
     trash-cli
   ];
 
+  programs.vscode = {
+    enable = true;
+    enableUpdateCheck = false;
+    package = pkgs.unstable.vscode;
+  };
+
   programs.firefox = {
     enable = true;
   };
