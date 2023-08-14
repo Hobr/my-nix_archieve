@@ -19,7 +19,6 @@
   };
 
   programs.git.enable = true;
-
-  services.v2raya.enable = true;
-  services.ssh-agent.enable = true;
+  programs.ssh.enable = true;
+  programs.gpg.enable = true;
 }

@@ -16,6 +16,7 @@
 
     # ./users.nix
     ./boot.nix
+    ./desktop.nix
     ./hardware-configuration.nix
     ./hardware.nix
     ./i18n.nix

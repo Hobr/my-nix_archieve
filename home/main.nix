@@ -14,7 +14,6 @@
     # inputs.nix-colors.homeManagerModules.default
 
     # ./nvim.nix
-    ./desktop.nix
     ./i18n.nix
     ./pkg.nix
   ];
