@@ -71,4 +71,5 @@ make history
 
 make gc
 ### sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 3d
+### sudo nix-collect-garbage -d
 ```
