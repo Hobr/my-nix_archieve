@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   home.sessionVariables = {
     "NIXOS_OZONE_WL" = 1;
   };
@@ -8,12 +8,6 @@
     alejandra
     trash-cli
   ];
-
-  programs.vscode = {
-    enable = true;
-    enableUpdateCheck = false;
-    package = pkgs.unstable.vscode;
-  };
 
   programs.firefox = {
     enable = true;

@@ -16,6 +16,7 @@
     # ./nvim.nix
     ./i18n.nix
     ./pkg.nix
+    ./vscode.nix
   ];
 
   nixpkgs = {
