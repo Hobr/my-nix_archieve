@@ -58,8 +58,17 @@ nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-chann
 reboot
 
 make sys
+### nixos-rebuild switch --flake .#hobr-nixos
+
 make home
+### home-manager switch --flake .#hobr@hobr-nixos
+
 make update
+### nix flake update
+
 make history
+### nix profile history --profile /nix/var/nix/profiles/system
+
 make gc
+### sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 3d
 ```
