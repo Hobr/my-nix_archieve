@@ -28,14 +28,14 @@
       "x86_64-darwin"
     ];
   in rec {
-    # 'nix build', 'nix shell'
+    # nix build/ nix shell
     packages = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in
         import ./pkgs {inherit pkgs;}
     );
-    # 'nix develop'
+    # nix develop
     devShells = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -47,7 +47,7 @@
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
 
-    # 'nixos-rebuild --flake .#hobr-nixos'
+    # nixos-rebuild --flake .#hobr-nixos
     nixosConfigurations = {
       hobr-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -57,7 +57,7 @@
       };
     };
 
-    # 'home-manager --flake .#hobr@hobr-nixos'
+    # home-manager --flake .#hobr@hobr-nixos
     homeConfigurations = {
       "hobr@hobr-nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
