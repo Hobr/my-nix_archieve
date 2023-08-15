@@ -1,9 +1,11 @@
 # 目录结构
 
-## Sys(系统)
+## System
 
-## Host(主机)
+## Home
 
-## Home(软件)
+## Modules
 
-## Pkg(自定义包)
+## Overlays
+
+## Pkgs
