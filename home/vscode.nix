@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
-    ./vscode/extensions.nix
-    ./vscode/settings.nix
+    ./extensions.nix
+    ./settings.nix
   ];
 
   programs.vscode = {
