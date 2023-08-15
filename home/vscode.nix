@@ -1,14 +1,16 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.vscode = {
     enable = true;
     package = pkgs.unstable.vscode;
 
     enableUpdateCheck = false;
 
-    extensions =
-      pkgs.vscode-utils.extensionsFromVscodeMarketplace
-      (import ./vscode/extensions.nix).extensions;
+    #extensions = inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx (import ./vscode/extensions.nix).ext;
 
-    userSettings = inputs.nix-vscode-extensions.extensions.${system} (import ./vscode/settings.nix).userSettings;
+    userSettings = (import ./vscode/settings.nix).userSettings;
   };
 }

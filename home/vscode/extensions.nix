@@ -1,5 +1,5 @@
 {
-  extensions = [
+  ext = [
     batisteo.vscode-django
     bbenoist.nix
     castwide.solargraph
