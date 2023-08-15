@@ -14,10 +14,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    impermanence.url = "github:nix-community/impermanence";
+    nil.url = "github:oxalica/nil";
+    nur.url = "github:nix-community/NUR";
+
+    rust-overlay.url = "github:oxalica/rust-overlay";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     hyprland.url = "github:hyprwm/Hyprland/v0.28.0";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    hypr-contrib.url = "github:hyprwm/contrib";
+    hyprpicker.url = "github:hyprwm/hyprpicker";
 
     catppuccin-btop = {
       url = "github:catppuccin/btop";
