@@ -1,11 +1,4 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     # modules/nixos
     # outputs.nixosModules.example
@@ -14,79 +7,43 @@
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
 
-    # ./users.nix
-    ./boot.nix
-    ./desktop.nix
-    ./hardware-configuration.nix
-    ./hardware.nix
-    ./i18n.nix
-    ./network.nix
-    ./nvidia.nix
-    ./pkg.nix
+    ./boot/filesystem.nix
+    ./boot/grub.nix
+    ./boot/howdy.nix
+    ./boot/kernel.nix
+    ./boot/persist.nix
+    ./boot/secureboot.nix
+    ./boot/splash.nix
+
+    ./config/base.nix
+    ./config/gc.nix
+    ./config/locale.nix
+    ./config/nixos.nix
+    ./config/pkg.nix
+    ./config/user.nix
+
+    ./hardware/audio.nix
+    ./hardware/base.nix
+    ./hardware/bluetooth.nix
+    ./hardware/cpu.nix
+    ./hardware/gpu.nix
+    ./hardware/input.nix
+    ./hardware/network.nix
   ];
 
-  nixpkgs = {
-    hostPlatform = "x86_64-linux";
-    overlays = [
-      # overlays\pkgs目录
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.unstable-packages
-
-      # flakes
-      # neovim-nightly-overlay.overlays.default
-
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
+  environment = {
+    systemPackages = with pkgs; [
+      nano
+      libva
+      libva-utils
+      glxinfo
+      gnomeExtensions.kimpanel
     ];
-    config = {
-      allowUnfree = true;
-    };
   };
 
-  nix = {
-    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
+  services.v2raya.enable = true;
 
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 3d";
-    };
-
-    settings = {
-      substituters = [
-        "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store"
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
-        "https://cache.nixos.org/"
-      ];
-
-      extra-substituters = [
-        "https://nix-community.cachix.org"
-        "https://hyprland.cachix.org"
-      ];
-      extra-trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      ];
-
-      experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
-    };
-  };
-
-  networking.hostName = "hobr-nixos";
-
-  users.users = {
-    hobr = {
-      isNormalUser = true;
-      extraGroups = ["wheel" "networkmanager" "audio"];
-    };
-  };
-
-  system.stateVersion = "23.05";
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 }
