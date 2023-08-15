@@ -57,5 +57,6 @@ rm /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/configuration.nix
 nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store" --show-trace --flake .#hobr-nixos
 reboot
 
+nix-shell
 make switch
 ```
