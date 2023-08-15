@@ -1,7 +1,11 @@
-{
+{pkgs, ...}: {
   # neofetch: 系统信息
   # lolcat: 彩色输出
 
+  home.packages = with pkgs; [
+    neofetch
+    lolcat
+  ];
   # btop: 系统监控
   # nvtop: GPU监控
   # iotop: io监控
