@@ -1,5 +1,9 @@
 {
-  ext = [
+  pkgs,
+  inputs,
+  ...
+}: let
+  marketplace-extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
     batisteo.vscode-django
     bbenoist.nix
     castwide.solargraph
@@ -8,7 +12,6 @@
     catppuccin.catppuccin-vsc-pack
     christian-kohler.path-intellisense
     codezombiech.gitignore
-    coenraads.bracket-pair-colorizer
     cschlosser.doxdocgen
     davidanson.vscode-markdownlint
     dbaeumer.vscode-eslint
@@ -18,7 +21,6 @@
     eamodio.gitlens
     editorconfig.editorconfig
     esbenp.prettier-vscode
-    felixfbecker.php-intellisense
     firefox-devtools.vscode-firefox-debug
     formulahendry.auto-rename-tag
     formulahendry.code-runner
@@ -50,14 +52,10 @@
     ms-vscode.js-debug
     ms-vscode.js-debug-companion
     ms-vscode.makefile-tools
-    ms-vscode.node-debug
-    ms-vscode.node-debug2
-    ms-vscode.references-view
     ms-vscode.remote-explorer
     ms-vscode.remote-server
     ms-vscode.vscode-js-profile-table
     ms-vsliveshare.vsliveshare
-    ms-vsonline.vsonline
     piersdeseilligny.betterfountain
     rebornix.ruby
     redhat.vscode-yaml
@@ -69,4 +67,11 @@
     wayou.vscode-todo-highlight
     wingrunr21.vscode-ruby
   ];
+in {
+  programs.vscode.extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx;
+    [
+      felixfbecker.php-intellisense
+      ms-vscode.references-view
+    ]
+    ++ marketplace-extensions;
 }

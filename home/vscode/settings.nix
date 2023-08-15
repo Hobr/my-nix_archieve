@@ -1,5 +1,5 @@
 {
-  userSettings = {
+  programs.vscode.userSettings = {
     "explorer.confirmDelete" = false;
     "workbench.startupEditor" = "newUntitledFile";
     "files.autoSave" = "onFocusChange";
