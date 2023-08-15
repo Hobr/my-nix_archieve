@@ -13,9 +13,4 @@
       };
     };
   };
-
-  boot.kernelParams = ["quiet"];
-  boot.plymouth = {
-    enable = true;
-  };
 }
