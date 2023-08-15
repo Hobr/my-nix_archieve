@@ -5,10 +5,7 @@
       libva
       libva-utils
       glxinfo
-      gcc
       gnomeExtensions.kimpanel
-      neofetch
-      lolcat
     ];
   };
 
