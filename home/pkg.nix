@@ -16,7 +16,6 @@
     gcc
     glib
     gnumake
-    gnuplot
     gnused
     gnutls
     imagemagick
