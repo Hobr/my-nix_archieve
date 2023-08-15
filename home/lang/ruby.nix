@@ -1,0 +1,6 @@
+{
+  # Ruby
+  # Bundle
+  # Rails
+  # Rubocop
+}

@@ -1,0 +1,4 @@
+{
+  # Nerd fonts
+  # Noto fonts
+}

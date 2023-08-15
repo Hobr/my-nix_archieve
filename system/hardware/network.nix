@@ -1,0 +1,4 @@
+{
+  # NetworkManager
+  # NetworkManager-Applet
+}

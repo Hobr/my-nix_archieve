@@ -1,0 +1,4 @@
+{
+  # grim
+  # wf-recorder
+}

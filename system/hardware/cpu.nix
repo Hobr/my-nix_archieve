@@ -1,0 +1,4 @@
+{
+  # intel-ucode
+  # intel-undervolt
+}

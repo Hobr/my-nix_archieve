@@ -1,0 +1,4 @@
+{
+  # grub
+  # os-prober
+}

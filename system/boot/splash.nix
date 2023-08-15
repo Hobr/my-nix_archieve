@@ -1,0 +1,4 @@
+{
+  # plymouth
+  # lightdm
+}
