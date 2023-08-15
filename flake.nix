@@ -9,8 +9,36 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    hyprland.url = "github:hyprwm/Hyprland/v0.28.0";
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+
+    catppuccin-btop = {
+      url = "github:catppuccin/btop";
+      flake = false;
+    };
+    catppuccin-fcitx5 = {
+      url = "github:catppuccin/fcitx5";
+      flake = false;
+    };
+    catppuccin-bat = {
+      url = "github:catppuccin/bat";
+      flake = false;
+    };
+    catppuccin-alacritty = {
+      url = "github:catppuccin/alacritty";
+      flake = false;
+    };
+    catppuccin-hyprland = {
+      url = "github:catppuccin/hyprland";
+      flake = false;
+    };
   };
 
   outputs = {
