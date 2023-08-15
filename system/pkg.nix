@@ -7,6 +7,8 @@
       glxinfo
       gcc
       gnomeExtensions.kimpanel
+      neofetch
+      lolcat
     ];
   };
 
