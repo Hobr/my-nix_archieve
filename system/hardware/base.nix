@@ -6,4 +6,7 @@
 
   # fstrim
   services.fstrim.enable = true;
+
+  # USB
+  services.udiskie.enable = true;
 }

@@ -3,6 +3,7 @@
   networking = {
     hostName = "hobr-nixos";
     useDHCP = lib.mkDefault true;
+    useHostResolvConf = true;
 
     networkmanager = {
       enable = true;

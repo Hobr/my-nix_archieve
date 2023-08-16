@@ -1,4 +1,7 @@
-{
+{pkgs, ...}: {
+  gtk = {
+    enable = true;
+  };
   # kvantum Qt
   # qt5ct Qt
   # icon 图标
