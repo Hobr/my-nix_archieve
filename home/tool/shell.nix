@@ -6,9 +6,6 @@
   # powerlevel10k
   programs.zsh = {
     enable = true;
-    oh-my-zsh = {
-      enable = true;
-    };
     zplug = {
       enable = true;
       plugins = [
