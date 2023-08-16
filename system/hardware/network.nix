@@ -6,7 +6,7 @@
 
     networkmanager = {
       enable = true;
-      #dns = "systemd-resolved";
+      dns = "systemd-resolved";
       wifi.powersave = true;
     };
 
@@ -16,8 +16,8 @@
     };
   };
 
-  #services.resolved.enable = true;
+  services.resolved.enable = true;
   systemd.services.NetworkManager.enable = true;
-  systemd.services.NetworkManager-wait-online.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = false;
   # NetworkManager-Applet
 }
