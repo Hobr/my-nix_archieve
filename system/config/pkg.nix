@@ -22,4 +22,17 @@
   };
 
   boot.tmp.useTmpfs = true;
+
+  # 文档
+  documentation = {
+    enable = true;
+    doc.enable = false;
+    man.enable = true;
+    dev.enable = false;
+  };
+
+  nix.settings = {
+    # 最大并行构建数
+    max-jobs = "auto";
+  };
 }
