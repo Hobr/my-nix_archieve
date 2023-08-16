@@ -19,7 +19,7 @@
     "git.confirmSync" = false;
     "editor.suggestSelection" = "first";
     "vsintellicode.modify.editor.suggestSelection" = "automaticallyOverrodeDefaultValue";
-    "extensions.ignoreRecommendations" = false;
+    "extensions.ignoreRecommendations" = true;
     "diffEditor.maxComputationTime" = 0;
     "ruby.format" = "rubocop";
     "eslint.format.enable" = true;
@@ -37,11 +37,11 @@
     "editor.formatOnType" = false;
 
     # 字体
-    "editor.fontFamily" = "CaskaydiaCove Nerd Font Mono";
-    "editor.fontSize" = 16;
+    #"editor.fontFamily" = "CaskaydiaCove Nerd Font Mono";
+    "editor.fontSize" = 18.5;
 
-    "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font Mono";
-    "terminal.integrated.fontSize" = 12.5;
+    #"terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font Mono";
+    "terminal.integrated.fontSize" = 14;
 
     # 主题
     "workbench.colorTheme" = "Catppuccin Latte";
