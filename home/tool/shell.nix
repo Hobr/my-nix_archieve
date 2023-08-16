@@ -13,11 +13,9 @@
           name = "romkatv/powerlevel10k";
           tags = [as:theme];
         }
-        {name = "Aloxaf/fzf-tab";}
-        {name = "zdharma-continuum/fast-syntax-highlighting";}
-        {name = "zsh-users/zsh-history-substring-search";}
-        {name = "zsh-users/zsh-completions";}
         {name = "zsh-users/zsh-autosuggestions";}
+        {name = "zsh-users/zsh-completions";}
+        {name = "zsh-users/zsh-syntax-highlighting";}
         {name = "hlissner/zsh-autopair";}
         {name = "chisui/zsh-nix-shell";}
       ];
