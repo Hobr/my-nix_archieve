@@ -20,6 +20,7 @@
     ./config/locale.nix
     ./config/nixos.nix
     ./config/pkg.nix
+    ./config/security.nix
     ./config/user.nix
 
     ./hardware/audio.nix
