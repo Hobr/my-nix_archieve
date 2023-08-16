@@ -10,6 +10,7 @@
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
+        # enableCryptodisk = true;
       };
     };
   };
