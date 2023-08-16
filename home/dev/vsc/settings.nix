@@ -37,11 +37,11 @@
     "editor.formatOnType" = false;
 
     # 字体
-    "editor.fontFamily" = "CaskaydiaCove Nerd Font Mono";
-    "editor.fontSize" = 18.5;
+    "editor.fontFamily" = "Monoid";
+    "editor.fontSize" = 19;
 
-    "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font Mono";
-    "terminal.integrated.fontSize" = 14;
+    "terminal.integrated.fontFamily" = "MesloLGS NF";
+    "terminal.integrated.fontSize" = 14.5;
 
     # 主题
     "workbench.colorTheme" = "Catppuccin Latte";

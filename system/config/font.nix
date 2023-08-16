@@ -19,19 +19,11 @@
       source-han-sans
       source-han-serif
 
-      sarasa-gothic
-      meslo-lgs-nf
-
-      cascadia-code
       fira-code
       jetbrains-mono
-      #(nerdfonts.override {
-      #  fonts = [
-      #    "CascadiaCode"
-      #    "FiraCode"
-      #    "JetBrainsMono"
-      #  ];
-      #})
+      monoid
+      meslo-lgs-nf
+      sarasa-gothic
     ];
 
     fontconfig = {
@@ -44,8 +36,8 @@
         ];
 
         sansSerif = [
-          "Source Han Aans"
-          "Source Aans"
+          "Source Han Sans"
+          "Source Sans"
           "Noto Sans"
           "Noto Color Emoji"
         ];
@@ -58,7 +50,7 @@
 
         emoji = ["Noto Color Emoji"];
       };
-      allowBitmaps = false;
+      # allowBitmaps = false;
     };
   };
 }
