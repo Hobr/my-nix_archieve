@@ -22,13 +22,16 @@
       sarasa-gothic
       meslo-lgs-nf
 
-      (nerdfonts.override {
-        fonts = [
-          "CascadiaCode"
-          "FiraCode"
-          "JetBrainsMono"
-        ];
-      })
+      cascadia-code
+      fira-code
+      jetbrains-mono
+      #(nerdfonts.override {
+      #  fonts = [
+      #    "CascadiaCode"
+      #    "FiraCode"
+      #    "JetBrainsMono"
+      #  ];
+      #})
     ];
 
     fontconfig = {
