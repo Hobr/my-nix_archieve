@@ -40,7 +40,7 @@
       gnomeExtensions.kimpanel
     ];
   };
-
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   services.v2raya.enable = true;
 
   services.xserver.enable = true;
