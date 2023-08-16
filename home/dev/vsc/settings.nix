@@ -37,10 +37,10 @@
     "editor.formatOnType" = false;
 
     # 字体
-    #"editor.fontFamily" = "CaskaydiaCove Nerd Font Mono";
+    "editor.fontFamily" = "CaskaydiaCove Nerd Font Mono";
     "editor.fontSize" = 18.5;
 
-    #"terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font Mono";
+    "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font Mono";
     "terminal.integrated.fontSize" = 14;
 
     # 主题

@@ -13,6 +13,8 @@
       source-code-pro
       hack-font
       jetbrains-mono
+      meslo-lgs-nf
+      nerdfonts
     ];
     fontconfig = {
       defaultFonts = {

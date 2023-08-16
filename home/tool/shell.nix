@@ -22,5 +22,8 @@
         {name = "chisui/zsh-nix-shell";}
       ];
     };
+    initExtra = ''
+      source ~/.p10k.zsh
+    '';
   };
 }
