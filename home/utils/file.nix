@@ -9,4 +9,7 @@
   # fd
   # exa
   # fzf
+
+  # USB
+  services.udiskie.enable = true;
 }

@@ -50,7 +50,6 @@
 
     ./tool/colorpicker.nix
     ./tool/fcitx.nix
-    ./tool/font.nix
     ./tool/record.nix
     ./tool/shell.nix
     ./tool/terminal.nix

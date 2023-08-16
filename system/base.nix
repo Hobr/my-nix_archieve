@@ -16,6 +16,7 @@
     ./boot/splash.nix
 
     ./config/base.nix
+    ./config/font.nix
     ./config/gc.nix
     ./config/locale.nix
     ./config/nixos.nix
