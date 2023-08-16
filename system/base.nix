@@ -12,7 +12,7 @@
     ./boot/howdy.nix
     ./boot/kernel.nix
     ./boot/persist.nix
-    ./boot/secureboot.nix
+    ./boot/secure.nix
     ./boot/splash.nix
 
     ./config/base.nix
