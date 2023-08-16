@@ -5,8 +5,8 @@ home:
 	home-manager switch --flake .#hobr@hobr-nixos --show-trace
 
 switch:
-	sudo nixos-rebuild switch --flake .#hobr-nixos
-	home-manager switch --flake .#hobr@hobr-nixos
+	sudo nixos-rebuild switch --flake .#hobr-nixos --show-trace
+	home-manager switch --flake .#hobr@hobr-nixos --show-trace
 
 update:
 	nix flake update
