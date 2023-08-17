@@ -1,5 +1,5 @@
 {
-  # alacritty: 桌面终端
+  # alacritty
   programs.alacritty = {
     enable = true;
   };
