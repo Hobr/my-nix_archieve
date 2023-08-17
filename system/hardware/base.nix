@@ -4,9 +4,11 @@
   # 驱动
   hardware.enableRedistributableFirmware = true;
 
-  # fstrim
   services = {
+    # 碎片
     fstrim.enable = true;
+
+    # 电池
     upower.enable = true;
 
     thermald.enable = true;
