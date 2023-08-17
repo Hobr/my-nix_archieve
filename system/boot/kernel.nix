@@ -24,6 +24,7 @@
       "loglevel=3"
       "nowatchdog"
       "splash"
+      "quiet"
       #"nvidia-drm.modeset=1"
     ];
   };

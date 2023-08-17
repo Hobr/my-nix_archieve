@@ -7,8 +7,7 @@
     # modules/home-manager
     # outputs.homeManagerModules.example
 
-    # flakes
-    # inputs.nix-colors.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
 
     ./desktop/bar.nix
     ./desktop/home.nix

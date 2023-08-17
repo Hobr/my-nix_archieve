@@ -1,11 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
   imports = [
     # modules/nixos
     # outputs.nixosModules.example
 
     # flakes
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
+    inputs.impermanence.nixosModules.impermanence
 
     ./boot/filesystem.nix
     ./boot/grub.nix
@@ -30,7 +34,6 @@
     ./hardware/cpu.nix
     ./hardware/gpu.nix
     ./hardware/input.nix
-    ./hardware/network.nix
   ];
 
   environment = {
@@ -44,6 +47,7 @@
   };
   services.v2raya.enable = true;
 
+  boot.plymouth.enable = true;
   services.xserver = {
     enable = true;
 
@@ -77,4 +81,13 @@
       #enableNvidia = true;
     };
   };
+
+  # 定位
+  services.geoclue2.enable = true;
+  location.provider = "geoclue2";
+
+  services.gnome.gnome-keyring.enable = true;
+
+  # zsh enableCompletion
+  environment.pathsToLink = ["/share/zsh"];
 }
