@@ -38,10 +38,10 @@
 
     # 字体
     "editor.fontFamily" = "Monoid";
-    "editor.fontSize" = 19;
+    "editor.fontSize" = 16;
 
     "terminal.integrated.fontFamily" = "MesloLGS NF";
-    "terminal.integrated.fontSize" = 14.5;
+    "terminal.integrated.fontSize" = 14;
 
     # 主题
     "workbench.colorTheme" = "Catppuccin Latte";
