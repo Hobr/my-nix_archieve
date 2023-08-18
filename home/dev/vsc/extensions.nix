@@ -4,68 +4,79 @@
   ...
 }: let
   marketplace-extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+    # Language
     batisteo.vscode-django
     bbenoist.nix
     castwide.solargraph
-    catppuccin.catppuccin-vsc
-    catppuccin.catppuccin-vsc-icons
-    catppuccin.catppuccin-vsc-pack
-    christian-kohler.path-intellisense
-    codezombiech.gitignore
-    cschlosser.doxdocgen
     davidanson.vscode-markdownlint
     dbaeumer.vscode-eslint
     dlasagno.rasi
-    donjayamanne.githistory
     dotjoshjohnson.xml
-    eamodio.gitlens
-    editorconfig.editorconfig
-    esbenp.prettier-vscode
-    firefox-devtools.vscode-firefox-debug
-    formulahendry.auto-rename-tag
-    formulahendry.code-runner
-    github.copilot
-    github.copilot-chat
     graphql.vscode-graphql
     graphql.vscode-graphql-syntax
     james-yu.latex-workshop
     jeff-hykin.better-cpp-syntax
-    jheilingbrunner.vscode-gnupg-tool
     johnnymorganz.stylua
     kamadorueda.alejandra
-    kisstkondoros.vscode-codemetrics
     mathematic.vscode-latex
-    miguelsolorio.fluent-icons
-    ms-ceintl.vscode-language-pack-zh-hans
+    piersdeseilligny.betterfountain
+    vue.volar
+    vue.vscode-typescript-vue-plugin
+    wingrunr21.vscode-ruby
+    rebornix.ruby
+    redhat.vscode-yaml
     ms-python.isort
     ms-python.python
     ms-python.vscode-pylance
-    ms-vscode-remote.remote-containers
-    ms-vscode-remote.remote-ssh
-    ms-vscode-remote.remote-ssh-edit
-    ms-vscode-remote.remote-wsl
-    ms-vscode-remote.remote-wsl-recommender
-    ms-vscode-remote.vscode-remote-extensionpack
     ms-vscode.cpptools
     ms-vscode.cpptools-extension-pack
     ms-vscode.cpptools-themes
     ms-vscode.js-debug
     ms-vscode.js-debug-companion
     ms-vscode.makefile-tools
-    ms-vscode.remote-explorer
-    ms-vscode.remote-server
-    ms-vscode.vscode-js-profile-table
-    ms-vsliveshare.vsliveshare
-    piersdeseilligny.betterfountain
-    rebornix.ruby
-    redhat.vscode-yaml
     robertoachar.vscode-essentials-snippets
+    ms-vscode.vscode-js-profile-table
+
+    # Git
+    donjayamanne.githistory
+    eamodio.gitlens
+    codezombiech.gitignore
+
+    # Util
+    formulahendry.auto-rename-tag
+    esbenp.prettier-vscode
+    cschlosser.doxdocgen
+    christian-kohler.path-intellisense
+    editorconfig.editorconfig
+    firefox-devtools.vscode-firefox-debug
+    formulahendry.code-runner
+    jheilingbrunner.vscode-gnupg-tool
     visualstudioexptteam.intellicode-api-usage-examples
     visualstudioexptteam.vscodeintellicode
-    vue.volar
-    vue.vscode-typescript-vue-plugin
     wayou.vscode-todo-highlight
-    wingrunr21.vscode-ruby
+    kisstkondoros.vscode-codemetrics
+
+    # UI
+    catppuccin.catppuccin-vsc
+    catppuccin.catppuccin-vsc-icons
+    catppuccin.catppuccin-vsc-pack
+    miguelsolorio.fluent-icons
+    ms-ceintl.vscode-language-pack-zh-hans
+
+    # AI
+    github.copilot
+    github.copilot-chat
+
+    # Remote
+    ms-vscode-remote.remote-containers
+    ms-vscode-remote.remote-ssh
+    ms-vscode-remote.remote-ssh-edit
+    ms-vscode-remote.remote-wsl
+    ms-vscode-remote.remote-wsl-recommender
+    ms-vscode-remote.vscode-remote-extensionpack
+    ms-vscode.remote-explorer
+    ms-vscode.remote-server
+    ms-vsliveshare.vsliveshare
   ];
 in {
   programs.vscode.extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.open-vsx;
