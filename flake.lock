@@ -431,11 +431,11 @@
         "nixpkgs_sirula": "nixpkgs_sirula"
       },
       "locked": {
-        "lastModified": 1692425859,
-        "narHash": "sha256-RYx7Z0B6u2uhieBAXv27yslbr/ghskPh399SEycWtW4=",
+        "lastModified": 1692436401,
+        "narHash": "sha256-x7QhT4P+W1gFoMtVXx7ZKnpT1rzfC1MlZ/cyMRAR+B4=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "dae2769bf1ad7fb5afc47c5b065e0561bf047807",
+        "rev": "290692ca3400207ec504b07dd9d180377757996f",
         "type": "github"
       },
       "original": {
