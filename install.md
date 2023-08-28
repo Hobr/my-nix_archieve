@@ -34,10 +34,9 @@ umount /mnt
 # 挂载, windows/data是我的数据盘, 你可以不用挂载
 mount -t tmpfs -o defaults,mode=755,size=4G none /mnt
 
-mkdir -p /mnt/{persist/sys,persist/home,persist/dot,home,home/hobr,nix,boot,mnt/windows,mnt/data}
+mkdir -p /mnt/{home/hobr,nix,persist/home/hobr,boot,mnt/windows,mnt/data}
 
 mount -t tmpfs -o defaults,mode=777,size=4G none /mnt/home/hobr
-
 mount -o compress=zstd,ssd,noatime,nodiratime,subvol=nix /dev/lvm/root /mnt/nix
 mount -o compress=zstd,ssd,noatime,nodiratime,subvol=persist /dev/lvm/root /mnt/persist
 
@@ -53,10 +52,14 @@ cd my-nix
 ## 修改成你的uuid
 nano /mnt/etc/nixos/hardware-configuration.nix
 nano system/boot/filesystem.nix
+nano system/boot/secure.nix
 rm /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/configuration.nix
+## 下载Github内容
+export all_proxy=http://192.168.1.102:10809
 nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store" --show-trace --flake .#hobr-nixos
 reboot
 
 nix-shell
+sudo nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store" --show-trace --flake .#hobr-nixos
 make switch
 ```
