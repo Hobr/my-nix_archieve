@@ -1,24 +1,23 @@
-{
+{pkgs, ...}: {
   # luks
-
-  #boot = {
-  #  initrd = {
-  # 加密
-  #    luks.devices = {
-  #      root = {
-  #        device = "/dev/disk/by-uuid/e3188239-f080-4415-8b6a-dbcd2437cad6";
-  #        preLVM = true;
-  #      };
-  #    };
-  #  };
-  #};
+  boot = {
+    initrd = {
+      luks.devices = {
+        root = {
+          device = "/dev/disk/by-uuid/289a1eb9-8b91-46d8-b540-8f3a5d4594f5";
+          preLVM = true;
+        };
+      };
+    };
+  };
 
   security = {
-    # shim
-
     # TPM
     tpm2 = {
       enable = true;
     };
   };
+
+  # shim
+  environment.systemPackages = [pkgs.shim-unsigned];
 }
