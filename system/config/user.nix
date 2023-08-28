@@ -3,6 +3,7 @@
     #mutableUsers = false;
     users = {
       hobr = {
+        hashedPassword = "$y$j9T$Nvb.2rjLuQEmmk4fERwht/$h0dIoKOnQeo1QuElBm83LF/1TjTR4tOQWVZOzv87PP7";
         isNormalUser = true;
         shell = pkgs.zsh;
         extraGroups = [
