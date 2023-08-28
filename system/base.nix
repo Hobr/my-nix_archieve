@@ -1,45 +1,49 @@
 {
-  pkgs,
   inputs,
   outputs,
   ...
 }: {
-  imports = [
-    # modules/nixos
-    # outputs.nixosModules.example
-
-    # flakes
-    inputs.impermanence.nixosModules.impermanence
-
-    ./boot/filesystem.nix
-    ./boot/grub.nix
-    ./boot/howdy.nix
-    ./boot/kernel.nix
-    ./boot/persist.nix
-    ./boot/secure.nix
-    ./boot/splash.nix
-
-    ./config/base.nix
-    ./config/font.nix
-    ./config/gc.nix
-    ./config/locale.nix
-    ./config/nixos.nix
-    ./config/pkg.nix
-    ./config/security.nix
-    ./config/user.nix
-
-    ./hardware/audio.nix
-    ./hardware/base.nix
-    ./hardware/bluetooth.nix
-    ./hardware/cpu.nix
-    ./hardware/gpu.nix
-    ./hardware/input.nix
-  ];
+  imports =
+    [
+      # modules/nixos
+      # outputs.nixosModules.example
+    ]
+    ++ [
+      # flakes
+      inputs.impermanence.nixosModules.impermanence
+    ]
+    ++ [
+      ./boot/filesystem.nix
+      ./boot/grub.nix
+      ./boot/howdy.nix
+      ./boot/kernel.nix
+      ./boot/persist.nix
+      ./boot/secure.nix
+      ./boot/splash.nix
+    ]
+    ++ [
+      ./config/base.nix
+      ./config/font.nix
+      ./config/gc.nix
+      ./config/locale.nix
+      ./config/nixos.nix
+      ./config/pkg.nix
+      ./config/security.nix
+      ./config/user.nix
+    ]
+    ++ [
+      ./hardware/audio.nix
+      ./hardware/base.nix
+      ./hardware/bluetooth.nix
+      ./hardware/cpu.nix
+      ./hardware/gpu.nix
+      ./hardware/input.nix
+    ];
 
   environment = {
-    systemPackages = with pkgs; [
-      nano
-      gnomeExtensions.kimpanel
+    systemPackages = [
+      pkgs.nano
+      pkgs.gnomeExtensions.kimpanel
     ];
   };
   services.v2raya.enable = true;
