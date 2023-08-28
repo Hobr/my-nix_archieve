@@ -10,8 +10,8 @@
     ]
     ++ [
       # flakes
-      inputs.impermanence.nixosModules.impermanence
       inputs.hyprland.homeManagerModules.default
+      inputs.impermanence.nixosModules.impermanence
     ]
     ++ [
       ./desktop/bar.nix

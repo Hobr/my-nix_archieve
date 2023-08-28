@@ -60,6 +60,5 @@ nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-chann
 reboot
 
 nix-shell
-sudo nixos-install --option substituters "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store" --show-trace --flake .#hobr-nixos
 make switch
 ```

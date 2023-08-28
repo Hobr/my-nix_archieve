@@ -70,9 +70,7 @@
     nixosConfigurations = {
       hobr-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./system/base.nix
-        ];
+        modules = [./system/base.nix];
       };
     };
 
@@ -81,9 +79,7 @@
       "hobr@hobr-nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home/base.nix
-        ];
+        modules = [./home/base.nix];
       };
     };
   };
