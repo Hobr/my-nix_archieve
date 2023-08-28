@@ -3,6 +3,7 @@
 
   # 驱动
   hardware.enableRedistributableFirmware = true;
+  environment.systemPackages = [pkgs.linux-firmware];
 
   services = {
     # 碎片

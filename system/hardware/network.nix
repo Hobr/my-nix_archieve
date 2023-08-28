@@ -24,4 +24,5 @@
   systemd.services.NetworkManager-wait-online.enable = false;
 
   # NetworkManager-Applet
+  environment.systemPackages = [pkgs.networkmanagerapplet];
 }
