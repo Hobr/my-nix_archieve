@@ -11,7 +11,7 @@
     ++ [
       # flakes
       inputs.hyprland.homeManagerModules.default
-      inputs.impermanence.nixosModules.impermanence
+      inputs.impermanence.nixosModules.home-manager.impermanence
     ]
     ++ [
       ./desktop/bar.nix
