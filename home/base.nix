@@ -23,6 +23,7 @@
     ./dev/vscode.nix
 
     ./lang/cpp.nix
+    ./lang/elect.nix
     ./lang/lua.nix
     ./lang/nix.nix
     ./lang/nodejs.nix
