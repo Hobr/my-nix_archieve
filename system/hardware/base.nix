@@ -1,4 +1,8 @@
-{modulesPath, ...}: {
+{
+  modulesPath,
+  pkgs,
+  ...
+}: {
   imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
   # 驱动
