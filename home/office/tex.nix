@@ -1,4 +1,5 @@
 {
   # TexLive
   # TexStudio
+  # Typst
 }
