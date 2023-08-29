@@ -4,7 +4,7 @@
     initrd = {
       luks.devices = {
         root = {
-          device = "/dev/disk/by-uuid/289a1eb9-8b91-46d8-b540-8f3a5d4594f5";
+          device = "/dev/disk/by-uuid/????";
           preLVM = true;
         };
       };

@@ -15,16 +15,16 @@
 
     # btrfs
     "/persist" = {
-      device = "/dev/disk/by-uuid/850383fe-1580-4b12-9ae9-8e22b587601a";
+      device = "/dev/disk/by-uuid/????";
       fsType = "btrfs";
-      options = ["subvol=persist" "compress=zstd" "ssd" "noatime" "nodiratime"];
+      options = ["subvol=persist" "compress=zstd" "ssd"];
       neededForBoot = true;
     };
 
     "/nix" = {
-      device = "/dev/disk/by-uuid/850383fe-1580-4b12-9ae9-8e22b587601a";
+      device = "/dev/disk/by-uuid/????";
       fsType = "btrfs";
-      options = ["subvol=nix" "compress=zstd" "ssd" "noatime" "nodiratime"];
+      options = ["subvol=nix" "compress=zstd" "ssd"];
     };
 
     # EFI
@@ -46,7 +46,7 @@
   };
 
   # 交换
-  swapDevices = [{device = "/dev/disk/by-uuid/06faedbc-e2fa-4a69-a557-e3a1756452e8";}];
+  swapDevices = [{device = "/dev/disk/by-uuid/????";}];
 
   # 文件系统支持
   boot.supportedFilesystems = ["btrfs" "ntfs"];

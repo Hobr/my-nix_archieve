@@ -32,13 +32,13 @@ btrfs subvolume list -p /mnt
 umount /mnt
 
 # 挂载, windows/data是我的数据盘, 你可以不用挂载
-mount -t tmpfs -o defaults,mode=755,size=4G none /mnt
+mount -t tmpfs -o defaults,mode=755,size=6G none /mnt
 
-mkdir -p /mnt/{home/hobr,nix,persist/home/hobr,boot,mnt/windows,mnt/data}
+mkdir -p /mnt/{home/hobr,nix,persist,boot,mnt/windows,mnt/data}
 
-mount -t tmpfs -o defaults,mode=777,size=4G none /mnt/home/hobr
-mount -o compress=zstd,ssd,noatime,nodiratime,subvol=nix /dev/lvm/root /mnt/nix
-mount -o compress=zstd,ssd,noatime,nodiratime,subvol=persist /dev/lvm/root /mnt/persist
+mount -t tmpfs -o defaults,mode=777,size=6G none /mnt/home/hobr
+mount -o compress=zstd,ssd,subvol=nix /dev/lvm/root /mnt/nix
+mount -o compress=zstd,ssd,subvol=persist /dev/lvm/root /mnt/persist
 
 mount /dev/nvme1n1p1 /mnt/boot
 mount /dev/nvme1n1p3 /mnt/mnt/windows
