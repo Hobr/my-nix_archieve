@@ -8,5 +8,8 @@
       key = "DA2EF9FF208DC734";
       signByDefault = true;
     };
+    extraConfig = {
+      safe.directory = "*";
+    };
   };
 }
