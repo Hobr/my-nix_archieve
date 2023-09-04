@@ -8,6 +8,7 @@
         name "My PipeWire Output"
       }
     '';
+    musicDirectory = "/home/hobr/音乐";
   };
 
   # ncmpcpp
@@ -16,5 +17,6 @@
   };
 
   # neteats-cloud-music-gtk
-  home.packages = [pkgs.netease-cloud-music-gtk];
+  ## rust bug
+  #home.packages = [pkgs.netease-cloud-music-gtk];
 }
