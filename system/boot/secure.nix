@@ -4,7 +4,7 @@
     initrd = {
       luks.devices = {
         root = {
-          device = "/dev/disk/by-uuid/????";
+          device = "/dev/disk/by-path/pci-0000:02:00.0-nvme-1-part1";
           preLVM = true;
         };
       };

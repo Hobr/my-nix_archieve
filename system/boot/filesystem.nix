@@ -1,24 +1,36 @@
 {
   fileSystems = {
     # tmpfs
-    "/" = {
-      device = "none";
-      fsType = "tmpfs";
-      options = ["defaults" "mode=755" "size=6G"];
-    };
+    #"/" = {
+    #  device = "none";
+    #  fsType = "tmpfs";
+    #  options = ["defaults" "mode=755" "size=6G"];
+    #};
 
-    "/home/hobr" = {
-      device = "none";
-      fsType = "tmpfs";
-      options = ["defaults" "mode=777" "size=6G"];
-    };
+    #"/home/hobr" = {
+    #  device = "none";
+    #  fsType = "tmpfs";
+    #  options = ["defaults" "mode=777" "size=6G"];
+    #};
 
     # btrfs
-    "/persist" = {
+    #"/persist" = {
+    #  device = "/dev/disk/by-label/NixOS";
+    #  fsType = "btrfs";
+    #  options = ["subvol=persist" "compress=zstd" "ssd"];
+    #  neededForBoot = true;
+    #};
+
+    "/" = {
       device = "/dev/disk/by-label/NixOS";
       fsType = "btrfs";
-      options = ["subvol=persist" "compress=zstd" "ssd"];
-      neededForBoot = true;
+      options = ["subvol=root" "compress=zstd" "ssd"];
+    };
+
+    "/home" = {
+      device = "/dev/disk/by-label/NixOS";
+      fsType = "btrfs";
+      options = ["subvol=home" "compress=zstd" "ssd"];
     };
 
     "/nix" = {
@@ -29,7 +41,7 @@
 
     # EFI
     "/boot" = {
-      device = "/dev/disk/by-uuid/C144-3BFB";
+      device = "/dev/disk/by-path/pci-0000:2f:00.0-nvme-1-part1";
       fsType = "vfat";
     };
 
@@ -55,7 +67,8 @@
   services.btrfs.autoScrub = {
     enable = true;
     interval = "weekly";
-    fileSystems = ["/persist" "/nix"];
+    #fileSystems = ["/persist" "/nix"];
+    fileSystems = ["/" "/nix" "/home"];
   };
 
   # fuse
