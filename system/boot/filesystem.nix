@@ -15,14 +15,14 @@
 
     # btrfs
     "/persist" = {
-      device = "/dev/disk/by-uuid/????";
+      device = "/dev/disk/by-label/NixOS";
       fsType = "btrfs";
       options = ["subvol=persist" "compress=zstd" "ssd"];
       neededForBoot = true;
     };
 
     "/nix" = {
-      device = "/dev/disk/by-uuid/????";
+      device = "/dev/disk/by-label/NixOS";
       fsType = "btrfs";
       options = ["subvol=nix" "compress=zstd" "ssd"];
     };
@@ -35,18 +35,18 @@
 
     # NTFS
     "/mnt/windows" = {
-      device = "/dev/disk/by-uuid/28BAF5142169A897";
+      device = "/dev/disk/by-label/Windows";
       fsType = "ntfs-3g";
     };
 
     "/mnt/data" = {
-      device = "/dev/disk/by-uuid/5A9C7E8B6EE23C3F";
+      device = "/dev/disk/by-label/Data";
       fsType = "ntfs-3g";
     };
   };
 
   # 交换
-  swapDevices = [{device = "/dev/disk/by-uuid/????";}];
+  swapDevices = [{device = "/dev/disk/by-label/Swap";}];
 
   # 文件系统支持
   boot.supportedFilesystems = ["btrfs" "ntfs"];
