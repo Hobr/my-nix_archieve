@@ -18,7 +18,7 @@
       ./boot/grub.nix
       ./boot/howdy.nix
       ./boot/kernel.nix
-      ./boot/persist.nix
+      #./boot/persist.nix
       ./boot/secure.nix
       ./boot/splash.nix
     ]

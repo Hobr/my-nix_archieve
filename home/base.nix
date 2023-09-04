@@ -71,7 +71,7 @@
       ./utils/git.nix
       ./utils/gnu.nix
       ./utils/keyring.nix
-      ./utils/persist.nix
+      #./utils/persist.nix
       ./utils/status.nix
     ]
     ++ [
