@@ -12,4 +12,6 @@
       support32Bit = true;
     };
   };
+
+  environment.systemPackages = [pkgs.pavucontrol];
 }
