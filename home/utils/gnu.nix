@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  # gpg-agent
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
@@ -8,12 +9,7 @@
   # gpg
   programs.gpg.enable = true;
 
-  # gpg-agent
-
-  # glib
-  # gnumake
-  # gnused
-  # gnutls
+  # GNU
   home.packages = with pkgs; [
     glib
     gnumake
