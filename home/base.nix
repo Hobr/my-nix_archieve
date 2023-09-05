@@ -87,7 +87,7 @@
       outputs.overlays.unstable-packages
 
       # flakes
-      # neovim-nightly-overlay.overlays.default
+      inputs.rust-overlay.overlays.default
 
       # (final: prev: {
       #   hi = final.hello.overrideAttrs (oldAttrs: {
