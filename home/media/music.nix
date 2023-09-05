@@ -17,6 +17,5 @@
   };
 
   # neteats-cloud-music-gtk
-  ## rust bug
-  #home.packages = [pkgs.netease-cloud-music-gtk];
+  home.packages = [pkgs.netease-cloud-music-gtk];
 }

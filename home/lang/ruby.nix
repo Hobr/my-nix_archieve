@@ -1,6 +1,7 @@
-{
+{pkgs, ...}: {
   # Ruby
-  # Bundle
+  home.packages = with pkgs; [ruby];
+
   # Rails
   # Rubocop
 }

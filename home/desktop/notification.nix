@@ -1,8 +1,9 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [libnotify];
   # dunst
   services.dunst = {
     enable = true;
   };
+
   # avizo
+  home.packages = with pkgs; [libnotify avizo];
 }
