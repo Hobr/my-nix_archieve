@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+
+  # pipewire
   services.pipewire = {
     enable = true;
     wireplumber.enable = true;
@@ -13,5 +14,9 @@
     };
   };
 
-  environment.systemPackages = [pkgs.pavucontrol];
+  # pulseaudio
+  hardware.pulseaudio.enable = false;
+
+  # pavucontrol
+  environment.systemPackages = with pkgs; [pamixer pavucontrol];
 }
