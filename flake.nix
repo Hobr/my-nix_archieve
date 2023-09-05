@@ -25,6 +25,7 @@
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
+    xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
 
     catppuccin-btop = {
       url = "github:catppuccin/btop";
@@ -54,6 +55,7 @@
       in
         import ./pkgs {inherit pkgs;}
     );
+
     # nix develop
     devShells = forAllSystems (
       system: let

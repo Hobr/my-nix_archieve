@@ -51,6 +51,7 @@ mount /dev/nvme1n1p3 /mnt/mnt/windows
 mount /dev/nvme1n1p4 /mnt/mnt/data
 
 ##############################################################
+
 # 无Persist
 # 子卷
 mkfs.btrfs -L NixOS /dev/lvm/root

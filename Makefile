@@ -13,10 +13,10 @@ boot:
 	home-manager build --flake .#hobr@hobr-nixos --show-trace
 
 update:
-	nix flake update
+	sudo nix flake update
 
 upgrade:
-	nix flake update
+	sudo nix flake update
 	sudo nixos-rebuild switch --flake .#hobr-nixos --show-trace
 	home-manager switch --flake .#hobr@hobr-nixos --show-trace
 
