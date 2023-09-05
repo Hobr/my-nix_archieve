@@ -2,10 +2,15 @@
   # plymouth
   boot.plymouth.enable = true;
 
-  # lightdm
-  #services.xserver.displayManager.lightdm = {
-  #  enable = true;
-  #};
+  # gdm
+  services.xserver = {
+    enable = true;
+    displayManager = {
+      gdm = {
+        enable = true;
+      };
+    };
+  };
 
   boot.initrd.systemd.enable = true;
 }

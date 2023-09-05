@@ -41,31 +41,12 @@
       ./hardware/input.nix
     ];
 
-  environment = {
-    systemPackages = [
-      pkgs.nano
-      pkgs.gnomeExtensions.kimpanel
-    ];
-  };
   services.v2raya.enable = true;
-
-  boot.plymouth.enable = true;
-  services.xserver = {
-    enable = true;
-
-    desktopManager = {
-      gnome.enable = true;
-    };
-
-    displayManager = {
-      gdm.enable = true;
-    };
-  };
 
   security = {
     pam = {
       services = {
-        lightdm.enableGnomeKeyring = true;
+        # gdm.enableGnomeKeyring = true;
         login.enableGnomeKeyring = true;
       };
     };
@@ -76,15 +57,13 @@
     docker = {
       enable = true;
       enableOnBoot = false;
-      #enableNvidia = true;
+      enableNvidia = true;
     };
   };
 
   # 定位
   services.geoclue2.enable = true;
   location.provider = "geoclue2";
-
-  services.gnome.gnome-keyring.enable = true;
 
   # zsh enableCompletion
   environment.pathsToLink = ["/share/zsh"];
