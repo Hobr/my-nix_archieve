@@ -14,7 +14,7 @@
       inputs.impermanence.nixosModules.home-manager.impermanence
     ]
     ++ [
-      ./desktop/bar.nix
+      ./desktop/launcher.nix
       ./desktop/home.nix
       ./desktop/hypr.nix
       ./desktop/lock.nix
